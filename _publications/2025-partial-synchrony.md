@@ -2,8 +2,6 @@
 title: "Partial Synchrony for Free: New Upper Bounds for Byzantine Agreement"
 collection: publications
 category: conferences
-# permalink: /publication/2024-dare-to-agree
-# excerpt: 'This paper is about fixing template issue #693.'
 date: 2025-01-12
 venue: 'SODA'
 paperurl: 'https://epubs.siam.org/doi/10.1137/1.9781611978322.144'

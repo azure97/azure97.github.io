@@ -2,8 +2,6 @@
 title: "Egalitarian Price of Fairness for Indivisible Goods"
 collection: publications
 category: conferences
-# permalink: /publication/2024-dare-to-agree
-# excerpt: 'This paper is about fixing template issue #693.'
 date: 2023-11-10
 venue: 'PRICAI'
 paperurl: 'https://link.springer.com/chapter/10.1007/978-981-99-7019-3_3'
