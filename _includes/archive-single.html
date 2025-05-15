@@ -31,7 +31,11 @@
         <a href="{{ post.link }}"> {{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
       {% else %}
         <!-- <a href="{{ base_path }}{{ post.url }}" rel="permalink"> {{ title }}</a> -->
-        {{ title }}
+        {% if pub_index %}
+          {{ pub_index }}. {{ title }}
+        {% else %}
+          {{ title }}
+        {% endif %}
       {% endif %}
     </h2>
     
@@ -46,26 +50,30 @@
             With {{ post.coauthors }}<br/>
           {% endif %}
           {% if post.volume %}
-            In {{ post.venue }} Vol. {{ post.volume }}<br/>
+            <i>{{ post.venue }} Vol. {{ post.volume }}</i><br/>
           {% else %}
-            In {{ post.venue }} {{ post.date | default: "1900-01-01" | date: "%Y" }}
+            <i>{{ post.venue }} {{ post.date | default: "1900-01-01" | date: "%Y" }}
             {% if post.pending %}
               (To appear)
             {% endif %}
+            </i>
             <br/>
           {% endif %}
         {% elsif post.date %}
          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}
 
-    {% if post.excerpt and site.read_more != 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-    {% elsif post.excerpt and site.read_more == 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
+    {% if post.excerpt.size > 1 %}
+      {% if site.read_more != 'enabled' %}
+        <!-- <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p> -->
+        {{ post.excerpt }}<br/>
+      {% elsif site.read_more == 'enabled' %}
+        <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
+      {% endif %}
     {% endif %}
     
     {% if post.paperurl %}
-      <p>
+      <!-- <p> -->
         <a href=" {{ post.paperurl }} ">Paper</a>
         {% if post.extendedurl %}
           | <a href=" {{ post.extendedurl }} ">Extended</a>
@@ -73,7 +81,7 @@
         {% if post.slidesurl %}
         | <a href=" {{ post.slidesurl }} ">Slides</a>
         {% endif %}
-      </p>
+      <!-- </p> -->
     {% endif %}
 
   </article>
