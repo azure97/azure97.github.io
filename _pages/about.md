@@ -19,4 +19,4 @@ My name is pronounced "Ayas".
 
 I maintain a personal [blog](https://ayazdz.me). 
 
-I used to do [competitive programming](https://cphof.org/profile/codeforces:ayaze). While I don't compete anymore, I still sometimes [write problems](https://ayazdz.me/blog/problems-ive-written/).
+I used to do [competitive programming](https://cphof.org/profile/ioi:5609). While I don't compete anymore, I still sometimes [write problems](https://ayazdz.me/blog/problems-ive-written/).
