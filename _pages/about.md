@@ -7,8 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-I am a final year CS PhD student at National University of Singapore, where I am fortunate to be advised by [Seth Gilbert](https://www.comp.nus.edu.sg/~gilbert/). Previously, I received my bachelor's
-degree in computer science from Universitas Indonesia.
+I am a postdoc at EPFL, hosted by [Rachid Guerraoui](https://dcl.epfl.ch/rachid/). 
+Previously, I obtained my PhD in computer science
+from National University of Singapore, advised by [Seth Gilbert](https://www.comp.nus.edu.sg/~gilbert/).
 
 I am broadly interested in distributed algorithms. Currently, my focus is on Byzantine consensus.
 
